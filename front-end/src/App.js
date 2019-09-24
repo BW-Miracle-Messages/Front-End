@@ -8,6 +8,7 @@ import HomeScreenCases from './Components/HomeScreenCases/HomeScreenCases'
 import FamilyAddCase from './Components/FamilyAddCase/FamilyAddCase';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import FooterNav from './Components/FooterNav/FooterNav';
+import VolunteerEditandDelete from './Components/VoluneteerEditandDelete/VolunteerEditandDelete'
 
 function App() {
   const [caseData, setCaseData] = useState([])
@@ -19,7 +20,8 @@ function App() {
       <Route path='/' component={HomeScreenCases} />
       <Route path='/login' component={VolunteerLogin} />
       <Route path='/family-add-case' component={FamilyAddCase} setCaseData={setCaseData}/>
-      <ProtectedRoute exact path='/protected' component={VolunteerAddCase} setCaseData={setCaseData}/>
+      <ProtectedRoute exact path='/volunteer-add-case' component={VolunteerAddCase} setCaseData={setCaseData}/>
+      <ProtectedRoute exact path='/volunteer-edit-delete-case' component={VolunteerEditandDelete} />
       <FooterNav />
     </div>
   );
