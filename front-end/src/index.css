@@ -12,8 +12,24 @@ code {
     monospace;
 }
 
+.container {
+  box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2);
+}
+
 .form{
   text-align: center;
-  margin-left: 10%;
-  margin-right: 10%; 
+  margin-left: 15%;
+  margin-right: 15%; 
+}
+
+button{
+ width: 50%;
+ margin-bottom: 5%;
+ border-radius: 5px;
+ padding: 5px 7px;
+ background: dodgerblue;
+}
+
+button:hover{
+  background: #98FB98;
 }

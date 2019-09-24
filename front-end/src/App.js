@@ -8,6 +8,7 @@ import HomeScreenCases from './Components/HomeScreenCases/HomeScreenCases'
 import FamilyAddCase from './Components/FamilyAddCase/FamilyAddCase';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import FooterNav from './Components/FooterNav/FooterNav';
+import VolunteerSignUp from './Components/VolunteerSignUp/VolunteerSignup';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <HeaderNav />
       <Route path='/' component={HomeScreenCases} />
       <Route path='/login' component={VolunteerLogin} />
+      <Route path='/signup' component={VolunteerSignUp} />
       <Route path='/family-add-case' component={FamilyAddCase} setCaseData={setCaseData}/>
       <ProtectedRoute exact path='/protected' component={VolunteerAddCase} setCaseData={setCaseData}/>
       <FooterNav />
