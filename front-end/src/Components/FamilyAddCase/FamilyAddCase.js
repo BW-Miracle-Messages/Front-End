@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './FamilyAddCase.scss'
 
+import {connect} from 'react-redux'
 
-const FamilyAddCase = props => {
+
+const FamilyAddCase = (props) => {
     const newForm = {
         newName : '',
         newLastLocation : '',
@@ -94,4 +96,12 @@ const FamilyAddCase = props => {
     )
 }
 
-export default FamilyAddCase;
+const mapStateToProps = state => {
+    return {
+        case: state.case,
+        isFetching: state.isFetching,
+        error: state.error
+    }
+}
+
+export default connect(mapStateToProps, {})(FamilyAddCase);
