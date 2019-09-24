@@ -12,7 +12,7 @@ const VolunteerAddCase = (props) => {
         .then(res => {
             console.log(res)
         })
-    })
+    }, [])
 
     const newForm = {
         homie_name : '',
