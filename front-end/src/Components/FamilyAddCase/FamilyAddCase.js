@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import './FamilyAddCase.scss'
 
 import {connect} from 'react-redux'
+import {addHomie} from '../../Actions'
 
 
 const FamilyAddCase = (props) => {
-    const {cases, isFetching, error} = props
+    const {cases, isFetching, error, addHomie} = props
     const newForm = {
         homie_name : '',
         current_city : '',
         current_state: '',
         last_location : '',
         hometown: '',
-
-
+        //api for this post request (https://miracle-messages2019.herokuapp.com/api/cases)
         newFamMemberName : '',
         newRelationship : '',
         newFamMemberLastLocation : '',
@@ -30,11 +30,20 @@ const FamilyAddCase = (props) => {
         })
     }
 
+    const homie = {
+        homie_name: detail.homie_name, 
+        current_city: detail.current_city, 
+        current_state: detail.current_state, 
+        last_location: detail.last_location,
+        hometown: detail.hometown
+    }
+
     const submitForm = e => {
         e.preventDefault();
-        // axios.post('URL', {})
+        addHomie(homie)
         setDetail(newForm) 
-        props.history.push('/')
+        console.log(homie)
+        // props.history.push('/')
     }
 
     return (
@@ -123,4 +132,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {})(FamilyAddCase);
+export default connect(mapStateToProps, {addHomie})(FamilyAddCase);

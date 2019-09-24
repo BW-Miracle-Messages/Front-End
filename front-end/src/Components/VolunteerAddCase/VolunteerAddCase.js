@@ -1,12 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth'
 import './VolunteerAddCase.scss'
+import axios from 'axios';
+
+
 
 const VolunteerAddCase = (props) => {
+
+    useEffect(() => {
+        axios.get('https://miracle-messages2019.herokuapp.com/api/case/1/family')
+        .then(res => {
+            console.log(res)
+        })
+    })
+
     const newForm = {
-        newName : '',
-        newLastLocation : '',
-        newCurrentCity : '',
+        homie_name : '',
+        current_city : '',
+        current_state: '',
+        last_location : '',
+        hometown: '',
+        // axiosWithAuth
+        //.post((https://miracle-messages2019.herokuapp.com/api/cases))
+        
         newFamMemberName : '',
         newRelationship : '',
         newFamMemberLastLocation : '',
@@ -23,11 +39,24 @@ const VolunteerAddCase = (props) => {
         })
     }
 
+    const homie = {
+        homie_name: detail.homie_name, 
+        current_city: detail.current_city, 
+        current_state: detail.current_state, 
+        last_location: detail.last_location,
+        hometown: detail.hometown
+    }
+
     const submitForm = e => {
         e.preventDefault();
-        // axiosWithAuth.post('URL', {})
+        axiosWithAuth()
+        .post('/cases', (homie))
+        .then(res => {
+            console.log(res.data)
+            console.log(homie)
+        })
         setDetail(newForm) 
-        props.history.push('/')
+        // props.history.push('/')
     }
 
     return (
@@ -37,23 +66,37 @@ const VolunteerAddCase = (props) => {
             </h1>
             <form onSubmit={submitForm}>
                 <input 
-                name='newName' 
+                name='homie_name' 
                 placeholder='Name of missing or homeless person'
-                value={detail.newName}
+                value={detail.homie_name}
                 onChange={handleChange}
                 />
 
                 <input 
-                name='newLastLocation'
+                name='last_location'
                 placeholder='Last known location'
-                value={detail.newLastLocation}
+                value={detail.last_location}
                 onChange={handleChange}
                 />
 
                 <input 
-                name='newCurrentCity' 
+                name='current_city' 
                 placeholder='Current city of last known location'
-                value={detail.newCurrentCity}
+                value={detail.current_city}
+                onChange={handleChange}
+                />
+
+                <input      
+                name='current_state' 
+                placeholder='Current state of last known location'
+                value={detail.current_state}
+                onChange={handleChange}
+                />
+
+                <input 
+                name='hometown' 
+                placeholder='Hometown'
+                value={detail.hometown}
                 onChange={handleChange}
                 />
 
