@@ -9,6 +9,7 @@ import FamilyAddCase from './Components/FamilyAddCase/FamilyAddCase';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import FooterNav from './Components/FooterNav/FooterNav';
 
+
 function App() {
   const [caseData, setCaseData] = useState([])
   // make axios get request and set res.data to caseData
