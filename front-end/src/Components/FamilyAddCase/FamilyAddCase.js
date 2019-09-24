@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FamilyAddCase.scss'
 
 
 const FamilyAddCase = props => {
@@ -30,8 +31,8 @@ const FamilyAddCase = props => {
     }
 
     return (
-        <div>
-            <h1>
+        <div className='form-container'>
+            <h1 className="h1">
             Add New Case Form:
             </h1>
             <form onSubmit={submitForm}>
@@ -56,7 +57,7 @@ const FamilyAddCase = props => {
                 onChange={handleChange}
                 />
 
-                <h3>For family members</h3>
+                <h3>For Family Members</h3>
                 <input 
                 name='newFamMemberName' 
                 placeholder='Name of family member posting'
@@ -85,7 +86,9 @@ const FamilyAddCase = props => {
                 value={detail.newVolunteerName}
                 onChange={handleChange}
                 />
+                <div className="button-container">
                 <button>Submit Case Form</button>
+                </div>
             </form>
         </div>
     )
