@@ -5,10 +5,15 @@ import {connect} from 'react-redux'
 
 
 const FamilyAddCase = (props) => {
+    const {cases, isFetching, error} = props
     const newForm = {
-        newName : '',
-        newLastLocation : '',
-        newCurrentCity : '',
+        homie_name : '',
+        current_city : '',
+        current_state: '',
+        last_location : '',
+        hometown: '',
+
+
         newFamMemberName : '',
         newRelationship : '',
         newFamMemberLastLocation : '',
@@ -39,23 +44,37 @@ const FamilyAddCase = (props) => {
             </h1>
             <form onSubmit={submitForm}>
                 <input 
-                name='newName' 
+                name='homie_name' 
                 placeholder='Name of missing or homeless person'
-                value={detail.newName}
+                value={detail.homie_name}
                 onChange={handleChange}
                 />
 
                 <input 
-                name='newLastLocation'
+                name='last_location'
                 placeholder='Last known location'
-                value={detail.newLastLocation}
+                value={detail.last_location}
                 onChange={handleChange}
                 />
 
                 <input 
-                name='newCurrentCity' 
+                name='current_city' 
                 placeholder='Current city of last known location'
-                value={detail.newCurrentCity}
+                value={detail.current_city}
+                onChange={handleChange}
+                />
+
+                <input 
+                name='current_state' 
+                placeholder='Current state of last known location'
+                value={detail.current_state}
+                onChange={handleChange}
+                />
+
+                <input 
+                name='hometown' 
+                placeholder='Hometown'
+                value={detail.hometown}
                 onChange={handleChange}
                 />
 
@@ -98,7 +117,7 @@ const FamilyAddCase = (props) => {
 
 const mapStateToProps = state => {
     return {
-        case: state.case,
+        cases: state.cases,
         isFetching: state.isFetching,
         error: state.error
     }
