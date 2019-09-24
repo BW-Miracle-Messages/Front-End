@@ -7,7 +7,6 @@ const HeaderNav = () => {
     return (
         <nav className="nav-wrapper blue darken-2">
             <div className='container'>
-                {/* <div className='brand-logo'>Logo</div> */}
                 <Link to='/'>Home</Link>
                 <SignedInLink />
                 <SignedOutLink />
