@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <HeaderNav />
-      <Route path='/' component={HomeScreenCases} />
+      <Route exact path='/' component={HomeScreenCases} />
       <Route path='/login' component={VolunteerLogin} />
       <Route path='/signup' component={VolunteerSignUp} />
       <Route path='/family-add-case' component={FamilyAddCase} setCaseData={setCaseData}/>
