@@ -5,7 +5,7 @@ import './HomeScreenCases.scss'
 
 
 const HomeScreenCases = () => {
-    const [data, setData] = useState({})
+    const [data, setData] = useState([])
     useEffect(() => {
         axios
             .get("https://miracle-messages2019.herokuapp.com/api/cases")
@@ -21,7 +21,7 @@ const HomeScreenCases = () => {
             <h1>Home Screen Cases</h1>
 
 
-            {/* {data.map((data) => {
+            {data.map((data) => {
                 return (
                     <div>
                         <h3>{data.current_city}</h3>
@@ -36,7 +36,7 @@ const HomeScreenCases = () => {
                 )
 
             })
-            } */}
+            }
 
         </div >
     );
