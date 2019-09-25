@@ -35,16 +35,37 @@ button:hover{
 }
 
 footer{
-  background: #262626;
-  margin: 0;
-  padding: 0;
+  margin-top: 7%;
 }
 
-.icons{
-  display:flex;
-  text-align: center;
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+.footer-link{
+  margin-right: 5%;
+}
+
+ul{
+  margin-left: 5%;
+}
+
+#footerHome{
+  margin-right: 10%;
+  color: black;
+}
+
+.ulContent{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.icons
+{
+  width: 50px;
+  height: 50px;
+  /* color:darkblue; */
+  padding: 12px 2px 5px 2px;
+  border: 2px solid;
+  /* border-color: dodgerblue; */
+  border-radius: 25%;
+  margin: 0 2px 0 2px;
+  /* background: lightblue; */
 }
