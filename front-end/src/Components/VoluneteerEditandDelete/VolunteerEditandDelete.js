@@ -6,7 +6,7 @@ import './VolunteerEditandDelete.scss'
 
 
 const VolunteerEditandDelete = props => {
-    console.log(props.caseData)
+    // console.log(props.caseData)
 
     const initialCaseDetails = {
         id: `${props.match.params.id}`,
@@ -28,7 +28,7 @@ const VolunteerEditandDelete = props => {
         const detailUpdate = props.caseData.find(cases => {
             return `${cases.id}` === id;
         })
-        console.log(detailUpdate);
+        // console.log(detailUpdate);
         if (detailUpdate) {
             setDetail(detailUpdate)
         }
