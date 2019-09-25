@@ -41,14 +41,16 @@ function App() {
       caseData={caseData}
       />
       
-      <ProtectedRoute exact path='/volunteer-edit-delete-case/:id'
+      {/* <ProtectedRoute  */}
+      <Route 
+      exact path='/volunteer-edit-delete-case/:id'
       render={props => {
         return <VolunteerEditandDelete 
         {...props} 
         setCaseData={setCaseData} 
         caseData={caseData}/>
       }} 
-      component={VolunteerEditandDelete} 
+      // component={VolunteerEditandDelete} 
       />
 
       <FooterNav />

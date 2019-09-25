@@ -4,6 +4,7 @@ import axios from 'axios';
 import './VolunteerEditandDelete.scss'
 
 
+
 const VolunteerEditandDelete = props => {
     console.log(props.caseData)
 
@@ -20,11 +21,18 @@ const VolunteerEditandDelete = props => {
         // volunteer: ''
     };
 
-    useEffect(() => {
-
-    }, [props.match.params.id, props.caseData])
-
     const [detail, setDetail] = useState(initialCaseDetails);
+
+    useEffect(() => {
+        const id = props.match.params.id;
+        const detailUpdate = props.caseData.find(cases => {
+            return `${cases.id}` === id;
+        })
+        console.log(detailUpdate);
+        if (detailUpdate) {
+            setDetail(detailUpdate)
+        }
+    }, [props.match.params.id, props.caseData])
 
     const handleChange = e => {
         e.persist();
@@ -35,10 +43,22 @@ const VolunteerEditandDelete = props => {
     }
     const submit = e => {
         e.preventDefault();
+        console.log(detail)
+        axios
+        .put(`https://miracle-messages2019.herokuapp.com/api/cases/${props.match.params.id}`, detail)
+        .then(res => {
+            setDetail(initialCaseDetails);
+            props.history.push('/')
+        })
         // axios PUT request and then props.history.push to '/home-volunteer'        
     }
     const deleteCase = e => {
         e.preventDefault();
+        axios
+        .delete(`https://miracle-messages2019.herokuapp.com/api/cases/${props.match.params.id}`)
+        .then(res => {
+            props.history.push('/')
+        })
         // axios DELETE request and then props.history.push to '/home-volunteer'
     }
     
