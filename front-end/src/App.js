@@ -29,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <HeaderNav />
+      <Switch>
       <Route exact path='/' component={HomeScreenCases} />
       <Route path='/login' component={VolunteerLogin} />
       <Route path='/signup' component={VolunteerSignUp} />
@@ -52,7 +53,7 @@ function App() {
       }} 
       component={VolunteerEditandDelete} 
       />
-
+  </Switch>
       <FooterNav />
     </div>
   );
