@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import { Form, Field, withFormik } from "formik";
-//import * as Yup from "yup";
+import * as Yup from "yup";
 
 
 
@@ -100,26 +100,3 @@ const FormikDataForm = withFormik({
     }
 })(UsForm);
 export default FormikDataForm;
-
-// const HomeScreenCases = () => {
-//     const mockData = {
-//         name: 'mockName',
-//         lastLocation: 'mockLocation',
-//         currentCity: "mockCity",
-//         familyMember: 'mockFamName',
-//         relationship: 'Relationship',
-//         famMemberLastLocation: 'mockFamMemberLastLocation',
-//         volunteer: "mockVolunteer"
-//     }
-//     const [data, setData] = useState(mockData)
-
-// validationSchema: Yup.object().shape({
-    //     name: Yup.string().required("You silly!!!"),
-    //     lastLocation: Yup.string().required(),
-    //     //.min(6, "Password must be 6 characters or longer"),
-    //     // password: Yup.string()
-    //     //     .required()
-    //     //     .min(6, "Password must be 6 characters or longer")
-    //     //     .required("Password is required")
-    // }),
-//export default HomeScreenCases;
