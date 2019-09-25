@@ -11,12 +11,12 @@ const FooterNav = () => {
                         <Link to='/' id='footerHome'>Home</Link>
                         <Link to='/contact' id='footerHome'>Contact</Link>
                     </div>
-                    <div> © 2019 Copyright Reunite</div>
+                    <div> &copy; 2019 Copyright Reunite</div>
                     <ul className='ulContent'>
-                        <li><a className="icons" href="#!"><i className="fa fa-2x fa-fw fa-linkedin"></i></a></li>
-                        <li><a className="icons" href="#!"><i className="fa fa-2x fa-fw fa-facebook"></i></a></li>
-                        <li><a className="icons" href="#!"><i className="fa fa-2x fa-fw fa-instagram"></i></a></li>
-                        <li><a className="icons" href="#!"><i className="fa fa-2x fa-fw fa-twitter"></i></a></li>
+                        <li><a className="icons" href="#!"><i className="fa fa-fw fa-linkedin"></i></a></li>
+                        <li><a className="icons" href="#!"><i className="fa fa-fw fa-facebook"></i></a></li>
+                        <li><a className="icons" href="#!"><i className="fa fa-fw fa-instagram"></i></a></li>
+                        <li><a className="icons" href="#!"><i className="fa fa-fw fa-twitter"></i></a></li>
                     </ul>
                 </div>
             </footer>
