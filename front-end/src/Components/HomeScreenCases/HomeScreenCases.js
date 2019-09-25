@@ -11,7 +11,7 @@ const HomeScreenCases = () => {
             .get("https://miracle-messages2019.herokuapp.com/api/cases")
             .then(res => {
                 console.log(res.data);
-                // setData(res.data);
+                setData(res.data);
             });
     }, []);
 

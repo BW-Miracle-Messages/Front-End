@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 import './FamilyAddCase.scss'
 
+import {connect} from 'react-redux'
+import {addHomie} from '../../Actions'
 
-const FamilyAddCase = props => {
+
+const FamilyAddCase = (props) => {
+    const {cases, isFetching, error, addHomie} = props
+
     const newForm = {
-        newName : '',
-        newLastLocation : '',
-        newCurrentCity : '',
-        newFamMemberName : '',
-        newRelationship : '',
-        newFamMemberLastLocation : '',
+        homie_name : '',
+        current_city : '',
+        current_state: '',
+        last_location : '',
+        hometown: '',
+        //api for this post request (https://miracle-messages2019.herokuapp.com/api/cases)
+
+
+        //Volunteer form
         newVolunteerName : '',
     }
 
@@ -23,11 +31,20 @@ const FamilyAddCase = props => {
         })
     }
 
+    const homie = {
+        homie_name: detail.homie_name, 
+        current_city: detail.current_city, 
+        current_state: detail.current_state, 
+        last_location: detail.last_location,
+        hometown: detail.hometown
+    }
+
     const submitForm = e => {
         e.preventDefault();
-        // axios.post('URL', {})
+        addHomie(homie)
         setDetail(newForm) 
-        props.history.push('/')
+        console.log(homie)
+        // props.history.push('/')
     }
 
     return (
@@ -37,45 +54,37 @@ const FamilyAddCase = props => {
             </h1>
             <form onSubmit={submitForm}>
                 <input 
-                name='newName' 
+                name='homie_name' 
                 placeholder='Name of missing or homeless person'
-                value={detail.newName}
+                value={detail.homie_name}
                 onChange={handleChange}
                 />
 
                 <input 
-                name='newLastLocation'
+                name='last_location'
                 placeholder='Last known location'
-                value={detail.newLastLocation}
+                value={detail.last_location}
                 onChange={handleChange}
                 />
 
                 <input 
-                name='newCurrentCity' 
+                name='current_city' 
                 placeholder='Current city of last known location'
-                value={detail.newCurrentCity}
-                onChange={handleChange}
-                />
-
-                <h3>For Family Members</h3>
-                <input 
-                name='newFamMemberName' 
-                placeholder='Name of family member posting'
-                value={detail.newFamMemberName}
+                value={detail.current_city}
                 onChange={handleChange}
                 />
 
                 <input 
-                name='newRelationship' 
-                placeholder="Relationship to person"
-                value={detail.newRelationship}
+                name='current_state' 
+                placeholder='Current state of last known location'
+                value={detail.current_state}
                 onChange={handleChange}
                 />
 
                 <input 
-                name='newFamMemberLastLocation' 
-                placeholder="Family member location"
-                value={detail.newFamMemberLastLocation}
+                name='hometown' 
+                placeholder='Hometown'
+                value={detail.hometown}
                 onChange={handleChange}
                 />
 
@@ -94,4 +103,12 @@ const FamilyAddCase = props => {
     )
 }
 
-export default FamilyAddCase;
+const mapStateToProps = state => {
+    return {
+        cases: state.cases,
+        isFetching: state.isFetching,
+        error: state.error
+    }
+}
+
+export default connect(mapStateToProps, {addHomie})(FamilyAddCase);
