@@ -19,16 +19,16 @@ export const addHomie = (homie) => {
     }
 }
 
-// export const addFamily = (family) => {
-//     return(dispatch) => {
-//         dispatch({ type: POSTING_FAMILY_START });
-//         axios
-//         .post(`https://miracle-messages2019.herokuapp.com/api/case/${id}/family`, family)
-//         .then(res => {
-//             console.log(res.data)
-//             console.log(family)
-//             dispatch({ type: SUBMIT_FAMILY, payload: res.data });
-//         })
-//         .catch(err => console.log(err))
-//     }
-// }
+export const addFamily = (family, id) => {
+    return(dispatch) => {
+        dispatch({ type: POSTING_FAMILY_START });
+        axios
+        .post(`https://miracle-messages2019.herokuapp.com/api/case/${id}/family`, family)
+        .then(res => {
+            console.log(res.data)
+            console.log(family)
+            dispatch({ type: SUBMIT_FAMILY, payload: res.data });
+        })
+        .catch(err => console.log(err))
+    }
+}

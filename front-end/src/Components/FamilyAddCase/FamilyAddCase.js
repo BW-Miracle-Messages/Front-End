@@ -7,6 +7,7 @@ import {addHomie} from '../../Actions'
 
 const FamilyAddCase = (props) => {
     const {cases, isFetching, error, addHomie} = props
+
     const newForm = {
         homie_name : '',
         current_city : '',
@@ -14,11 +15,14 @@ const FamilyAddCase = (props) => {
         last_location : '',
         hometown: '',
         //api for this post request (https://miracle-messages2019.herokuapp.com/api/cases)
-        family_name : '',
-        age: '',
-        relationship : '',
-        current_location : '',
-        email: '',
+
+        // family_name : '',
+        // age: '',
+        // relationship : '',
+        // current_location : '',
+        // email: '',
+        // case_id: '',
+
         //Volunteer form
         newVolunteerName : '',
     }
@@ -90,7 +94,7 @@ const FamilyAddCase = (props) => {
                 onChange={handleChange}
                 />
 
-                <h3>For Family Members</h3>
+                {/* <h3>For Family Members</h3>
                 <input 
                 name='family_name' 
                 placeholder='Name of family member posting'
@@ -132,7 +136,7 @@ const FamilyAddCase = (props) => {
                 placeholder="email adress"
                 value={detail.email}
                 onChange={handleChange}
-                />
+                /> */}
 
                 <h3>For Volunteer</h3>
                 <input 

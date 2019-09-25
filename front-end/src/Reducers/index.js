@@ -5,7 +5,7 @@ const initialState = {
         {
 
         },
-    ], 
+    ],
     isFetching : false,
     error: ''
 };

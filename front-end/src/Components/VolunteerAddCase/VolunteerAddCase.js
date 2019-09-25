@@ -22,11 +22,11 @@ const VolunteerAddCase = (props) => {
         hometown: '',
         // axiosWithAuth
         //.post((https://miracle-messages2019.herokuapp.com/api/cases))
-        family_name : '',
-        age: '',
-        relationship : '',
-        current_location : '',
-        email: '',
+        // family_name : '',
+        // age: '',
+        // relationship : '',
+        // current_location : '',
+        // email: '',
 
         // Volunteer form
         newVolunteerName : '',
@@ -103,7 +103,7 @@ const VolunteerAddCase = (props) => {
                 onChange={handleChange}
                 />
 
-                <h3>For Family Members</h3>
+                {/* <h3>For Family Members</h3>
                 <input 
                 name='family_name' 
                 placeholder='Name of family member posting'
@@ -145,7 +145,7 @@ const VolunteerAddCase = (props) => {
                 placeholder="email adress"
                 value={detail.email}
                 onChange={handleChange}
-                />
+                /> */}
 
                 <h3>For Volunteer</h3>
                 <input 

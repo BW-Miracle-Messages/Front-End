@@ -5,6 +5,7 @@ import './VolunteerEditandDelete.scss'
 
 
 const VolunteerEditandDelete = props => {
+    console.log(props.caseData)
 
     const initialCaseDetails = {
         id: `${props.match.params.id}`,
@@ -17,7 +18,11 @@ const VolunteerEditandDelete = props => {
         // relationship: '',
         // famMembercurrent_city : '',
         // volunteer: ''
-    }
+    };
+
+    useEffect(() => {
+
+    }, [props.match.params.id, props.caseData])
 
     const [detail, setDetail] = useState(initialCaseDetails);
 
