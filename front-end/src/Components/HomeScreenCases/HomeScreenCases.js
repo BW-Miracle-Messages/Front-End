@@ -8,10 +8,10 @@ const HomeScreenCases = () => {
     const [data, setData] = useState({})
     useEffect(() => {
         axios
-            .get('https://miracle-messages2019.herokuapp.com/api/volunteers')
+            .get("https://miracle-messages2019.herokuapp.com/api/cases")
             .then(res => {
                 console.log(res.data);
-                setData(res.data);
+                // setData(res.data);
             });
     }, []);
 
@@ -20,9 +20,11 @@ const HomeScreenCases = () => {
         <div className="App">
             <h1>Home Screen Cases</h1>
 
+
             {/* {data.map((data) => {
                 return (
                     <div>
+                        <h3>{data.current_city}</h3>
                         <h3>{data.name}</h3>
                         <h3>{data.lastLocation}</h3>
                         <h3>{data.currentCity}</h3>
@@ -33,9 +35,10 @@ const HomeScreenCases = () => {
                     </div>
                 )
 
-            })} */}
+            })
+            } */}
 
-        </div>
+        </div >
     );
 }
 
