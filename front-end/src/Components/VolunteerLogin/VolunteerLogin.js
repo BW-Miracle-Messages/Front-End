@@ -5,7 +5,7 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth';
 const VolunteerLogin = (props) => {
 
     const credentials = {
-        username : '',
+        volunteer_name : '',
         password: ''
     }
 
@@ -29,7 +29,7 @@ const VolunteerLogin = (props) => {
             props.history.push('/')
             console.log(res)
         })
-        .catch(err => console.log(err))
+        // .catch(err => console.log(err))
 		// console.log(e);
 	};
 	return (
@@ -38,7 +38,7 @@ const VolunteerLogin = (props) => {
 				<h5 className="grey-text text-darken-3">Enter Sign In Details Below</h5>
 				<div className="input-field">
 					<label htmlFor="name">Enter User Name</label>
-					<input type="text" name='username' placeholder="Enter your username" onChange={handleChange} value={login.username} />
+					<input type="text" name='volunteer_name' placeholder="Enter your Full Name" onChange={handleChange} value={login.volunteer_name} />
 				</div>
 				<div className="input-field">
 					<label htmlFor="password">Password</label>

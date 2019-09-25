@@ -1,12 +1,25 @@
-import axios from 'axios';
+import axios from 'axios'; 
 
-export const axiosWithAuth =() => {
+export const axiosWithAuth = () => {
     const token = localStorage.getItem('token');
 
-    return axios.create({
+    return axios.create({ 
+        baseURL: "https://miracle-messages2019.herokuapp.com/api",
         headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `${token}`,
-        },
+            Authorization: token
+        }
     });
-}; 
+};
+
+// import axios from 'axios';
+
+// export const axiosWithAuth =() => {
+//     const token = localStorage.getItem('token');
+
+//     return axios.create({
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Authorization': `${token}`,
+//         },
+//     });
+// }; 
