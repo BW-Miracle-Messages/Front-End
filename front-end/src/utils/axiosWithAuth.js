@@ -1,12 +1,12 @@
-import axios from 'axios'; 
+import axios from 'axios';
 
-export const axiosWithAuth = () => {
+export const axiosWithAuth =() => {
     const token = localStorage.getItem('token');
 
-    return axios.create({ 
-        baseURL: "https://miracle-messages2019.herokuapp.com/api",
+    return axios.create({
         headers: {
-            Authorization: token
-        }
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`,
+        },
     });
-};
+}; 
