@@ -7,11 +7,11 @@ import VolunteerLogin from './Components/VolunteerLogin/VolunteerLogin';
 import VolunteerSignUp from './Components/VolunteerSignUp/VolunteerSignup';
 import VolunteerAddCase from './Components/VolunteerAddCase/VolunteerAddCase'
 import HomeScreenCases from './Components/HomeScreenCases/HomeScreenCases'
-import FamilyAddCase from './Components/FamilyAddCase/FamilyAddCase';
+// import FamilyAddCase from './Components/FamilyAddCase/FamilyAddCase';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import FooterNav from './Components/FooterNav/FooterNav';
 import VolunteerEditandDelete from './Components/VoluneteerEditandDelete/VolunteerEditandDelete'
-// import FamilyAddData from './Components/FamilyAddData./FamilyAddData'
+import FamilyAddData from './Components/FamilyAddData./FamilyAddData'
 
 function App() {
   const [caseData, setCaseData] = useState([])
@@ -21,7 +21,7 @@ function App() {
     axios
     .get('https://miracle-messages2019.herokuapp.com/api/cases')
     .then(res => {
-      console.log(res.data)
+      // console.log(res.data)
       setCaseData(res.data)
     })
   }, [])
@@ -33,8 +33,8 @@ function App() {
       <Route exact path='/' component={HomeScreenCases} />
       <Route path='/login' component={VolunteerLogin} />
       <Route path='/signup' component={VolunteerSignUp} />
-      <Route path='/family-add-case' component={FamilyAddCase} setCaseData={setCaseData}/>
-      {/* <Route path='/:id/family-add-data' component={FamilyAddData} /> */}
+      {/* <Route path='/family-add-case' component={FamilyAddCase} setCaseData={setCaseData}/> */}
+      <Route path='/:id/family-add-data' component={FamilyAddData} />
      
       <ProtectedRoute exact path='/volunteer-add-case' 
       component={VolunteerAddCase} 

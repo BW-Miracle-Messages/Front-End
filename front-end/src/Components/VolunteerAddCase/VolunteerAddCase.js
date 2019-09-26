@@ -24,7 +24,7 @@ const VolunteerAddCase = (props) => {
         //.post((https://miracle-messages2019.herokuapp.com/api/cases))
 
         // Volunteer form
-        newVolunteerName : '',
+        volunteer_id : '',
     }
 
     const [detail, setDetail] = useState(newForm)
@@ -42,7 +42,8 @@ const VolunteerAddCase = (props) => {
         current_city: detail.current_city, 
         current_state: detail.current_state, 
         last_location: detail.last_location,
-        hometown: detail.hometown
+        hometown: detail.hometown,
+        volunteer_id: detail.volunteer_id
     }
 
     const submitForm = e => {
@@ -100,9 +101,10 @@ const VolunteerAddCase = (props) => {
 
                 <h3>For Volunteer</h3>
                 <input 
-                name ='newVolunteerName' 
-                placeholder="Volunteer name"
-                value={detail.newVolunteerName}
+                name ='volunteer_id' 
+                type="number"
+                placeholder="Volunteer ID"
+                value={detail.volunteer_id}
                 onChange={handleChange}
                 />
                 <div className="button-container">
