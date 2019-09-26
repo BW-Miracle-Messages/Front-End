@@ -5,7 +5,7 @@ import './HomeScreenCases.scss'
 
 
 const HomeScreenCases = () => {
-    const [data, setData] = useState({})
+    const [data, setData] = useState([])
     useEffect(() => {
         axios
             .get("https://miracle-messages2019.herokuapp.com/api/cases")
@@ -17,30 +17,28 @@ const HomeScreenCases = () => {
 
 
     return (
-        <div className="App">
-            <h1>Home Screen Cases</h1>
-
-
-            {/* {data.map((data) => {
-                return (
-                    <div>
-                        <h3>{data.current_city}</h3>
-                        <h3>{data.name}</h3>
-                        <h3>{data.lastLocation}</h3>
-                        <h3>{data.currentCity}</h3>
-                        <h3>{data.familyMemberName}</h3>
-                        <h3>{data.relationship}</h3>
-                        <h3>{data.famMemberLastLocation}</h3>
-                        <h3>{data.volunteer}</h3>
-                    </div>
-                )
-
-            })
-            } */}
-
+        <div className="container">
+            <h1>Reunite Cases</h1>
+            {data.map(person => (<CaseCard data={person} key={person.id} />))}
         </div >
     );
 }
+
+ function CaseCard({data}) {
+    return (
+        <div className='case-card'>
+            <h4><i>{data.homie_name}</i></h4>
+            <h6>Cureent State: <i>{data.current_state}</i></h6>
+            <h6>Current City: <i>{data.current_city}</i></h6>
+            <h6>Last Location: <i>{data.last_location}</i></h6>
+            <div className='btn-edit'>
+                <button className='button-edit'>Edit Case</button>
+                <button className='button-edit'>Add Family Data</button>
+            </div>
+
+        </div>
+    );
+  }
 
 
 export default HomeScreenCases;
