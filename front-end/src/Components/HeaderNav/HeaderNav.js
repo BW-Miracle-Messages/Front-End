@@ -22,7 +22,7 @@ const SignedInLink = () =>{
         <ul className ="right">
             <li><NavLink to='/'>Cases</NavLink></li>
             <li><NavLink to='/'>Log Out</NavLink></li>
-            <li><NavLink to='/' className='btn btn-floating pink lighten-1'>BX</NavLink></li>
+            <li><NavLink to='/' className='btn btn-floating pink lighten-1'>RU</NavLink></li>
         </ul>
     )
 }
