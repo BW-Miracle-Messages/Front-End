@@ -37,15 +37,15 @@ const VolunteerLogin = (props) => {
 			<form onSubmit={handleSubmit} className="form">
 				<h5 className="grey-text text-darken-3">Enter Sign In Details Below</h5>
 				<div className="input-field">
-					<label htmlFor="name">Enter User Name</label>
-					<input type="text" name='volunteer_name' placeholder="Enter your Full Name" onChange={handleChange} value={login.volunteer_name} />
+					<label htmlFor="name">Enter Name</label>
+					<input type="text" name='volunteer_name' onChange={handleChange} value={login.volunteer_name} />
 				</div>
 				<div className="input-field">
-					<label htmlFor="password">Password</label>
-					<input type="password" name='password' placeholder='Enter your password' onChange={handleChange} value={login.password}/>
+					<label htmlFor="password">Enter Password</label>
+					<input type="password" name='password' onChange={handleChange} value={login.password}/>
 				</div>
 				<div className="input-field">
-					<button>Submit</button>
+					<button className='button-submit'>Submit</button>
 				</div>
 			</form>
 		</div>
