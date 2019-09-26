@@ -11,7 +11,7 @@ import FamilyAddCase from './Components/FamilyAddCase/FamilyAddCase';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import FooterNav from './Components/FooterNav/FooterNav';
 import VolunteerEditandDelete from './Components/VoluneteerEditandDelete/VolunteerEditandDelete'
-import FamilyAddData from './Components/FamilyAddData./FamilyAddData'
+// import FamilyAddData from './Components/FamilyAddData./FamilyAddData'
 
 function App() {
   const [caseData, setCaseData] = useState([])
@@ -34,7 +34,7 @@ function App() {
       <Route path='/login' component={VolunteerLogin} />
       <Route path='/signup' component={VolunteerSignUp} />
       <Route path='/family-add-case' component={FamilyAddCase} setCaseData={setCaseData}/>
-      <Route path='/:id/family-add-data' component={FamilyAddData} />
+      {/* <Route path='/:id/family-add-data' component={FamilyAddData} /> */}
      
       <ProtectedRoute exact path='/volunteer-add-case' 
       component={VolunteerAddCase} 

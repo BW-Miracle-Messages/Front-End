@@ -54,7 +54,7 @@ const VolunteerSignUp = (props) => {
 					<input type="number" id="number" onChange={handleChange} value={signUp.Phone}/>
 				</div> */}
 				<div className="input-field">
-					<button>Submit</button>
+					<button className='button-submit'>Submit</button>
 				</div>
 			</form>
 		</div>
