@@ -11,11 +11,11 @@ import HomeScreenCases from './Components/HomeScreenCases/HomeScreenCases'
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import FooterNav from './Components/FooterNav/FooterNav';
 import VolunteerEditandDelete from './Components/VoluneteerEditandDelete/VolunteerEditandDelete'
-import FamilyAddData from './Components/FamilyAddData./FamilyAddData'
+import IndividualCase from './IndividualCase/IndividualCase';
+// import FamilyAddData from './Components/FamilyAddData./FamilyAddData';
 
 function App() {
   const [caseData, setCaseData] = useState([])
-  // make axios get request and set res.data to caseData
 
   useEffect(() => {
     axios
@@ -31,10 +31,11 @@ function App() {
       <HeaderNav />
       <Switch>
       <Route exact path='/' component={HomeScreenCases} />
+      <Route path="/individualcase/:id" component={IndividualCase} />
       <Route path='/login' component={VolunteerLogin} />
       <Route path='/signup' component={VolunteerSignUp} />
       {/* <Route path='/family-add-case' component={FamilyAddCase} setCaseData={setCaseData}/> */}
-      <Route path='/:id/family-add-data' component={FamilyAddData} />
+      {/* <Route path='/:id/family-add-data' component={FamilyAddData} /> */}
      
       <ProtectedRoute exact path='/volunteer-add-case' 
       component={VolunteerAddCase} 
