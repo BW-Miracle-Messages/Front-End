@@ -11,6 +11,7 @@ import FamilyAddCase from './Components/FamilyAddCase/FamilyAddCase';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import FooterNav from './Components/FooterNav/FooterNav';
 import VolunteerEditandDelete from './Components/VoluneteerEditandDelete/VolunteerEditandDelete'
+import IndividualCase from './IndividualCase/IndividualCase';
 // import FamilyAddData from './Components/FamilyAddData./FamilyAddData'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <HeaderNav />
       <Switch>
       <Route exact path='/' component={HomeScreenCases} />
+      <Route path="/individualcase/:id" component={IndividualCase} />
       <Route path='/login' component={VolunteerLogin} />
       <Route path='/signup' component={VolunteerSignUp} />
       <Route path='/family-add-case' component={FamilyAddCase} setCaseData={setCaseData}/>
