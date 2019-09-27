@@ -19,42 +19,42 @@ function App() {
 
   useEffect(() => {
     axios
-    .get('https://miracle-messages2019.herokuapp.com/api/cases')
-    .then(res => {
-      // console.log(res.data)
-      setCaseData(res.data)
-    })
+      .get('https://miracle-messages2019.herokuapp.com/api/cases')
+      .then(res => {
+        // console.log(res.data)
+        setCaseData(res.data)
+      })
   }, [])
 
   return (
     <div className="App">
       <HeaderNav />
       <Switch>
-      <Route exact path='/' component={HomeScreenCases} />
-      <Route path="/individualcase/:id" component={IndividualCase} />
-      <Route path='/login' component={VolunteerLogin} />
-      <Route path='/signup' component={VolunteerSignUp} />
-      {/* <Route path='/family-add-case' component={FamilyAddCase} setCaseData={setCaseData}/> */}
-      {/* <Route path='/:id/family-add-data' component={FamilyAddData} /> */}
-     
-      <ProtectedRoute exact path='/volunteer-add-case' 
-      component={VolunteerAddCase} 
-      setCaseData={setCaseData} 
-      caseData={caseData}
-      />
-      
-      <ProtectedRoute 
-      // <Route 
-      exact path='/volunteer-edit-delete-case/:id'
-      render={props => {
-        return <VolunteerEditandDelete 
-        {...props} 
-        setCaseData={setCaseData} 
-        caseData={caseData}/>
-      }} 
-      component={VolunteerEditandDelete} 
-      />
-  </Switch>
+        <Route exact path='/' component={HomeScreenCases} />
+        <Route path="/individualcase/:id" component={IndividualCase} />
+        <Route path='/login' component={VolunteerLogin} />
+        <Route path='/signup' component={VolunteerSignUp} />
+        {/* <Route path='/family-add-case' component={FamilyAddCase} setCaseData={setCaseData}/> */}
+        {/* <Route path='/:id/family-add-data' component={FamilyAddData} /> */}
+
+        <ProtectedRoute exact path='/volunteer-add-case'
+          component={VolunteerAddCase}
+          setCaseData={setCaseData}
+          caseData={caseData}
+        />
+
+        <ProtectedRoute
+          // <Route 
+          exact path='/volunteer-edit-delete-case/:id'
+          render={props => {
+            return <VolunteerEditandDelete
+              {...props}
+              setCaseData={setCaseData}
+              caseData={caseData} />
+          }}
+          component={VolunteerEditandDelete}
+        />
+      </Switch>
       <FooterNav />
     </div>
   );

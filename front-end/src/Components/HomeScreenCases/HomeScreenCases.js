@@ -16,7 +16,7 @@ const HomeScreenCases = props => {
                 setData(res.data);
             });
     }, []);
-    
+
 
     return (
         <div className="container">
