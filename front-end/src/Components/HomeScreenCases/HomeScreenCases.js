@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import {withRouter, Link} from 'react-router-dom';
 import axios from 'axios'
 import './HomeScreenCases.scss'
 import CaseCard from './CaseCard'
@@ -23,9 +22,7 @@ const HomeScreenCases = props => {
         <div className="container">
             <h1 className='intro'>Reunite Cases</h1>
             {data.map(person => (
-                <Link to={`/individualcase/${person.id}`} key={person.id}>
-                    <CaseCard data={person} key={person.id} />
-                </Link>
+                <CaseCard data={person} key={person.id} />
             ))}
         </div >
     );

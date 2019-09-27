@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 import axios from 'axios';
 import avatar from "../../avatar.png";
 
@@ -26,14 +26,18 @@ function CaseCard(props) {
     return (
         <div className='case-card' key={data.id}>
             <div className='CaseDiv'>           
-                <div className='home'>            
-                    <h4><i>{data.homie_name}</i></h4>
-                    <h6>Current State: <i>{data.current_state}</i></h6>
-                    <h6>Current City: <i>{data.current_city}</i></h6>
-                    <h6>Last Location: <i>{data.last_location}</i></h6>
+                <div> 
+                    <Link to={`/individualcase/${data.id}`} key={data.id} className='home'>           
+                        <h4><i>{data.homie_name}</i></h4>
+                        <h6>Current State: <i>{data.current_state}</i></h6>
+                        <h6>Current City: <i>{data.current_city}</i></h6>
+                        <h6>Last Location: <i>{data.last_location}</i></h6>
+                    </Link>
                 </div>
                 <div className='avatarDiv'>
-                   <img src={avatar} alt="Avatar" className="avatar"></img>
+                    <Link to={`/individualcase/${data.id}`} key={data.id}>
+                        <img src={avatar} alt="Avatar" className="avatar"></img>
+                    </Link>
                 </div>
             </div> 
             <div className='btn-edit'>
