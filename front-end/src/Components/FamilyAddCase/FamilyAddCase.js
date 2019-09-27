@@ -18,7 +18,7 @@ const FamilyAddCase = (props) => {
 
 
         //Volunteer form
-        newVolunteerName : '',
+        // newVolunteerName : '',
     }
 
     const [detail, setDetail] = useState(newForm)
@@ -88,13 +88,13 @@ const FamilyAddCase = (props) => {
                 onChange={handleChange}
                 />
 
-                <h3>For Volunteer</h3>
+                {/* <h3>For Volunteer</h3>
                 <input 
                 name ='newVolunteerName' 
                 placeholder="Volunteer name"
                 value={detail.newVolunteerName}
                 onChange={handleChange}
-                />
+                /> */}
                 <div className="button-container">
                 <button>Submit Case Form</button>
                 </div>

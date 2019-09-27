@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import './HomeScreenCases.scss'
+import CaseCard from './CaseCard'
 
 
 
-const HomeScreenCases = () => {
+const HomeScreenCases = props => {
+
     const [data, setData] = useState([])
     useEffect(() => {
         axios
@@ -18,8 +20,10 @@ const HomeScreenCases = () => {
 
     return (
         <div className="container">
-            <h1>Reunite Cases</h1>
-            {data.map(person => (<CaseCard data={person} key={person.id} />))}
+            <h1 className='intro'>Reunite Cases</h1>
+            {data.map(person => (
+                <CaseCard data={person} key={person.id} />
+            ))}
         </div >
     );
 }
