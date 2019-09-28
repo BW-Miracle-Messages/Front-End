@@ -9,7 +9,7 @@ const FooterNav = () => {
                 <div className="ulContent">
                     <div className='footer-link'>
                         <Link to='/' id='footerHome'>Home</Link>
-                        <Link to='/contact' id='footerHome'>Contact</Link>
+                        <Link to='/' id='footerHome'>Contact</Link>
                     </div>
                     <div> &copy; 2019 Copyright Reunite</div>
                     <ul className='ulContent'>
