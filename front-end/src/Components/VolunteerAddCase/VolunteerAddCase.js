@@ -55,7 +55,7 @@ const VolunteerAddCase = (props) => {
             console.log(homie)
         })
         setDetail(newForm) 
-        // props.history.push('/')
+        props.history.push('/')
     }
 
     return (
