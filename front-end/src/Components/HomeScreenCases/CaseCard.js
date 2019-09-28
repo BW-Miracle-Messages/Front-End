@@ -9,7 +9,7 @@ function CaseCard(props) {
     useEffect(() => {
         axios.get('https://miracle-messages2019.herokuapp.com/api/volunteers/case/2/family')
         .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
         })
     }, [])
 
@@ -17,7 +17,7 @@ function CaseCard(props) {
     // console.log(props)
     const goToEdit = () => {
         props.history.push(`/volunteer-edit-delete-case/${props.data.id}`)
-        console.log(CaseCard)
+        // console.log(CaseCard)
     }
     const goToAddFamData = () => {
         props.history.push(`/${props.data.id}/family-add-data`)
